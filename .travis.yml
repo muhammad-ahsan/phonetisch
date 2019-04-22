@@ -1,0 +1,14 @@
+dist: xenial
+language: python
+branches:
+  only:
+    - master
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+cache: pip
+# command to run tests
+script: python -m unittest discover -s test -p 'test_*.py'
