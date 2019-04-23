@@ -1,8 +1,8 @@
 import unittest
 
-from phonetisch.soundex.Soundex import Soundex
-
+from phonetisch import soundex
 
 class TestSoundex(unittest.TestCase):
+
     def test_encode(self):
-        assert Soundex.encode("Example") == Soundex.encode("Ekzampul")
+        assert soundex.encode_word("Example") == soundex.encode_word("Ekzampul")
