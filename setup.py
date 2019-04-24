@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='phonetisch',
-      version='0.2',
+      version='0.2.1',
       description='Python implementation of phonetisch algorithms e.g. soundex and Cologne phonetics which are '
                   'phonetic algorithms for English and German. The homophones are '
                   'encoded to the same representation so that they can be matched despite '
