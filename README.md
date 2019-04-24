@@ -4,7 +4,7 @@ Phonetic algorithms library in python focusing of multiple languages.
 ## Key features
 * Simple to use.
 * Support multiple languages.
-* Supports Python 2.7 and Python 3.4+.
+* Supports Python 3.4+.
 
 ## Installation
 Use pip to install the lastest version:
