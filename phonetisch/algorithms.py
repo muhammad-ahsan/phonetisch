@@ -1,15 +1,27 @@
 from abc import abstractmethod, ABCMeta
 
+from phonetisch.utils import Pipeline
 
-class IPhoneticAlgo(metaclass=ABCMeta):
+
+class PhoneticStrategy(metaclass=ABCMeta):
     """Implements various phonetic algorithms"""
 
     @abstractmethod
     def encode_word(self, word):
-        """Encode word into string representation"""
+        """Encode word into string representation
+
+        Parameters
+        ----------
+        word : string
+            The word to be converted into a phonetic code according to phonetic algorithm strategy.
+        Returns
+        -------
+        code : phonetic strategy mapping code
+            Encoded string corresponding to word.
+        """
 
 
-class Soundex(IPhoneticAlgo):
+class Soundex(PhoneticStrategy):
 
     def encode_word(self, word):
         code = word.upper()[0] + ''
@@ -47,3 +59,15 @@ class Soundex(IPhoneticAlgo):
         elif character in ['R']:
             return '6'
         return ''
+
+
+class Caverphone(PhoneticStrategy):
+
+    def __init__(self):
+        self.step_1 = lambda word: word.replace('a', 'b')
+        self.step_2 = lambda word: word.replace('b', 'c')
+        self.steps = [self.step_1, self.step_2]
+
+    def encode_word(self, word):
+        pipeline = Pipeline(self.steps)
+        return pipeline.execute(word)
