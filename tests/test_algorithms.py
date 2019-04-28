@@ -11,5 +11,5 @@ class TestSoundex(unittest.TestCase):
 
 class TestCaverphone(unittest.TestCase):
     def test_encode(self):
-        assert caverphone.encode_word("Lee") == caverphone.encode_word("L11111")
-        assert caverphone.encode_word("Thompson") == caverphone.encode_word("TMPSN1")
+        assert caverphone.encode_word("Lee") == 'L11111'
+        assert caverphone.encode_word("Thompson") == 'TMPSN1'
