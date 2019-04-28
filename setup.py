@@ -7,7 +7,7 @@ setup(name='phonetisch',
                   'encoded to the same representation so that they can be matched despite '
                   'minor differences in spellings.',
       long_description=open('README.md').read(),
-      url='https://github.com/muhammad-ahsan/soundex-py.git',
+      url='https://muhammad-ahsan.github.io/phonetisch/',
       author='Muhammad Ahsan',
       author_email='muhammad.ahsan@gmail.com',
       license='MIT',
