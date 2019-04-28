@@ -6,6 +6,7 @@
 Phonetic algorithms library in python focusing of multiple languages.
 
 ## Key features
+* Implementation of Soundex and Caverphone.
 * Simple to use.
 * Support multiple languages.
 * Supports Python 3.4+.
@@ -19,13 +20,15 @@ pip install phonetisch
 
 ## Usage Examples
 ```python
-from phonetisch import soundex
+from phonetisch import soundex, caverphone
 
 first_code = soundex.encode_word('Example')
 second_code = soundex.encode_word('Ekzampul')
 
 if first_code == second_code:
   print('Both words are homophones')
+  
+print(caverphone.encode_word("Thompson"))
 ```
 
 ## Reference
