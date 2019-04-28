@@ -1,4 +1,8 @@
-# phonetisch [![Build Status](https://travis-ci.org/muhammad-ahsan/phonetisch.svg?branch=master)](https://travis-ci.org/muhammad-ahsan/phonetisch)
+# phonetisch 
+
+[![Build Status](https://travis-ci.org/muhammad-ahsan/phonetisch.svg?branch=master)](https://travis-ci.org/muhammad-ahsan/phonetisch) [![PyPI version](https://badge.fury.io/py/phonetisch.svg)](https://badge.fury.io/py/phonetisch)
+
+
 Phonetic algorithms library in python focusing of multiple languages.
 
 ## Key features
