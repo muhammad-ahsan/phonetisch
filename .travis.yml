@@ -10,4 +10,4 @@ python:
   - "3.7"
 cache: pip
 # command to run tests
-script: python -m unittest tests/'test_soundex.py'
+script: python -m unittest tests/'test_algorithms.py'
