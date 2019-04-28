@@ -12,7 +12,7 @@ Phonetic algorithms library in python focusing of multiple languages.
 * Supports Python 3.4+.
 
 ## Installation
-Use pip to install the lastest version:
+Use pip to install the latest version:
 
 ```bash
 pip install phonetisch
@@ -32,7 +32,9 @@ print(caverphone.encode_word("Thompson"))
 ```
 
 ## Reference
-https://en.wikipedia.org/wiki/Soundex
+* https://en.wikipedia.org/wiki/Phonetic_algorithm
+* https://en.wikipedia.org/wiki/Soundex
+* https://en.wikipedia.org/wiki/Caverphone
 
 
 ## Links
