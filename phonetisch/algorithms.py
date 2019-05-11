@@ -122,3 +122,94 @@ class Caverphone(PhoneticStrategy):
         return pipeline.execute(word)
 
 
+class ColognePhonetics(PhoneticStrategy):
+
+    def encode_word(self, word1):
+        word = list(word1)
+        code = ''
+        if word[0] == 'X':
+            code = code + '48'
+        if (word[0] == 'C' and (
+                word[1] == 'A' or word[1] == 'H' or word[1] == 'K' or word[1] == 'L' or word[1] == 'O' or word[
+            1] == 'Q' or
+                word[1] == 'U' or word[1] == 'X')):
+            code = code + '4'
+        if (word[0] == 'C' and (
+                word[1] == 'B' or word[1] == 'C' or word[1] == 'D' or word[1] == 'E' or word[1] == 'F' or word[
+            1] == 'G' or
+                word[1] == 'I' or word[1] == 'J' or word[1] == 'M' or word[1] == 'N' or word[1] == 'P' or word[
+                    1] == 'S' or
+                word[1] == 'T' or word[1] == 'V' or word[1] == 'W' or word[1] == 'Y' or word[1] == 'Z')):
+            code = code + '8'
+        for i in range(0, (len(word))):
+
+            if (word[i] == 'A' or word[i] == 'E' or word[i] == 'I' or word[i] == 'J' or word[i] == 'O' or word[
+                i] == 'U' or
+                    word[i] == 'Y' or word[i] == 'Ä' or word[i] == 'Ö' or word[i] == 'Ü' or word[i] == 'ß'):
+                code = code + '0'
+            if word[i] == 'B':
+                code = code + '1'
+            if word[i] == 'F' or word[i] == 'V' or word[i] == 'W':
+                code = code + '3'
+            if word[i] == 'G' or word[i] == 'K' or word[i] == 'Q':
+                code = code + '4'
+            if word[i] == 'L':
+                code = code + '5'
+            if word[i] == 'M' or word[i] == 'N':
+                code = code + '6'
+            if word[i] == 'R':
+                code = code + '7'
+            if word[i] == 'S' or word[i] == 'Z':
+                code = code + '8'
+            if word[i] == 'P':
+                code = code + '1'
+            if word[i] == 'P' and word[i + 1] == 'H':
+                code = code + '3'
+            if word[i] == 'X' and (word[i - 1] == 'C' or word[i - 1] == 'K' or word[i - 1] == 'Q'):
+                code = code + '8'
+            if (word[i] == 'X' and (
+                    word[i - 1] == 'A' or word[i - 1] == 'B' or word[i - 1] == 'D' or word[i - 1] == 'E' or word[
+                i - 1] == 'F' or word[i - 1] == 'G' or word[i - 1] == 'H' or word[i - 1] == 'I' or word[i - 1] == 'J' or
+                    word[i - 1] == 'L' or word[i - 1] == 'M' or word[i - 1] == 'N' or word[i - 1] == 'O' or word[
+                        i - 1] == 'P' or word[i - 1] == 'R' or word[i - 1] == 'S' or word[i - 1] == 'T' or word[
+                        i - 1] == 'U' or word[i - 1] == 'V' or word[i - 1] == 'W' or word[i - 1] == 'X' or word[
+                        i - 1] == 'Y' or word[i - 1] == 'Z')):
+                code = code + '48'
+
+            if word[i] == 'C' and (word[i - 1] == 'S' or word[i - 1] == 'Z'):
+                code = code + '8'
+            if (word[i] == 'C' and (word[i - 1] != 'S' and word[i - 1] != 'Z') and (
+                    word[i + 1] == 'A' or word[i + 1] == 'H' or word[i + 1] == 'K' or word[i + 1] == 'O' or word[
+                i + 1] == 'Q' or word[i + 1] == 'U' or word[i + 1] == 'X')):
+                code = code + '4'
+
+            if (word[i] == 'C' and (
+                    word[i + 1] == 'B' or word[i + 1] == 'C' or word[i + 1] == 'D' or word[i + 1] == 'E' or word[
+                i + 1] == 'F' or word[i + 1] == 'G' or word[i + 1] == 'I' or word[i + 1] == 'J' or word[i + 1] == 'L' or
+                    word[i + 1] == 'M' or word[i + 1] == 'N' or word[i + 1] == 'P' or word[i + 1] == 'R' or word[
+                        i + 1] == 'S' or word[i + 1] == 'T' or word[i + 1] == 'V' or word[i + 1] == 'W' or word[
+                        i + 1] == 'Y' or word[i + 1] == 'Z')):
+                code = code + '8'
+            if ((word[i] == 'D' or word[i] == 'T') and i != (len(word) - 1) and (
+                    word[i + 1] == 'C' or word[i + 1] == 'S' or word[i + 1] == 'Z')):
+                code = code + '8'
+            if ((word[i] == 'D' or word[i] == 'T') and i != (len(word) - 1) and (
+                    word[i + 1] == 'A' or word[i + 1] == 'B' or word[i + 1] == 'D' or word[i + 1] == 'E' or word[
+                i + 1] == 'F' or word[i + 1] == 'G' or word[i + 1] == 'H' or word[i + 1] == 'I' or word[i + 1] == 'J' or
+                    word[i + 1] == 'K' or word[i + 1] == 'L' or word[i + 1] == 'M' or word[i + 1] == 'N' or word[
+                        i + 1] == 'O' or word[i + 1] == 'P' or word[i + 1] == 'Q' or word[i + 1] == 'R' or word[
+                        i + 1] == 'T' or word[i + 1] == 'U' or word[i + 1] == 'V' or word[i + 1] == 'W' or word[
+                        i + 1] == 'X' or word[i + 1] == 'Y' or word[i + 1] == '\n')):
+                code = code + '2'
+        if word[len(word) - 1] == 'D' or word[len(word) - 1] == 'T':
+            code = code + '2'
+            print(code)
+
+        code = code.replace('0', '')
+        code1 = list(code)
+        for i in range(0, (len(code1)) - 1):
+            if code1[i] == code1[i + 1]:
+                code1[i] = '0'
+        code_final = ''.join(map(str, code1))
+        code_final = code_final.replace('0', '')
+        return code_final
