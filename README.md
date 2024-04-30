@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/muhammad-ahsan/phonetisch.svg?branch=master)](https://travis-ci.org/muhammad-ahsan/phonetisch) [![PyPI version](https://badge.fury.io/py/phonetisch.svg)](https://badge.fury.io/py/phonetisch)
 
 
-Phonetic algorithms library in python focusing of multiple languages.
+Phonetic algorithms library in Python focusing of multiple languages.
 
 ## Key features
 * Implementation of Soundex and Caverphone.
@@ -43,6 +43,6 @@ print(caverphone.encode_word("Thompson"))
 ## License
 MIT License
 
-## Contributers
+## Contributors
 * Muhammad Ahsan [@muhammad-ahsan](https://github.com/muhammad-ahsan)
 * Dounia Sediame [@sediame](https://github.com/sediame)
